@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Example</title>
+  <style>
+    .original-style {
+      background-color: aqua;
+      padding: 20px;
+    }
+    .new-style {
+      background-color: yellow;
+      padding: 80px;
+    }
+  </style>
+</head>
+<body>
+  <div class="original-style">
+    <p>This is the original content.</p>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Remove original style and add new style
+      $('.original-style').removeClass('original-style').addClass('new-style');
+
+      // Modify paragraph content
+      $('p').text('This is the modified content.');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title> React</title>
+        <script crossdomain src="https://unpkg.com/react@17/umd/react.development.js"> </script> 
+		<script crossdomain src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"> </script> 
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+        <style>
+            h1,h2{
+                text-align:center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container"></div>
+        <script type="text/babel">
+            var des=document.querySelector("#container");
+            class Counter extends React.Component{
+                constructor(){
+                    super();
+                    this.state={
+                        date: new Date()
+                    };
+                    this.timer=this.timer.bind(this)
+                }
+                componentDidMount(){
+                        setInterval(this.timer,1000);
+                }
+                timer=(){
+                    this.setState(
+                        {
+                            date:new Date()
+                        }
+                    )}
+                
+                
+                render(){
+                    return(
+                        <div>
+                            <h1> Time as on today</h1>
+                            <h2> It is {this.state.date.tolocateTimeString()} </h2>
+                    )
+                }
+            }
+            ReactDOM.render(
+                <Clock/>,des
+            
+            );

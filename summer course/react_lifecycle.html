@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title> React</title>
+        <script crossdomain src="https://unpkg.com/react@17/umd/react.development.js"> </script> 
+		<script crossdomain src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"> </script> 
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+        <style>
+            h1,h2{
+                text-align:center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container"></div>
+        <script type="text/babel">
+
+            class Hello extends React.Component{
+                constructor(props){
+                    console.log("In constructor")
+                    super(props)
+                    this.state={name:"ABC",address:"Banglore",ph_no:"1234567890"
+                }
+            }
+            render(){
+                console.log("In render")
+                return(
+                    <div>
+                        <h1> Hello{this.state.name}</h1>
+                        <p>from {this.state.address} and phone number {this.state.ph_mo} </p>
+                        <button onClick={this.updatestate}>Click to update</button>
+                        <button onClick={this.deletestate}>Click to delete</button>
+                        </div>
+                )
+            }
+            UNSAFE_componentWillMount(){
+                console.log("Will mount")
+            }
+
+            UNSAFE_componentWillUpdate(){
+                console.log("Will update")
+            }
+
+            omponentDidMount(){
+                console.log("Did Mount")
+            }
+
+            componentDidUpdate(prevProps,prevState){
+                console.log("Did Update")
+            }
+            shouldComponentUpdate(nextProps,nextState)
+            {
+                console.log("Should update")
+                return true
+            }
+            componentWillUnmount(){
+                console.log("Will unmount")
+            }
+
+            deletestate=()=>{
+                console.log("function delete")
+                ReactDOM.unmountComponentAtNode(document.getElementById("container"))
+            }
+
+            updatestate=()=>{
+                console.log("Update state")
+                this.setState({name:"XYZ"})
+            }
+        }
+        ReactDOM.render(
+                    <Hello/>,document.getElementById("container"));
+        </script>
+    </body>
+    </html>

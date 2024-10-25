@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Form</title>
+    </head>
+    <body>
+        <form action="mailto:abc@pes.edu">
+            <label for="fname">First Name</label>
+            <input type="text"><br/><br/>
+            <label for="lname">Last Name</label>
+            <input type="text" id="text1" name="lname" value="def_value"><br/><br>
+            <label for="add">Address</label>
+            <input type="textarea" rows="30 cols=45"><br><br>
+
+            <textarea name="address" rows="20" cols="25">Address</textarea>
+            <br/><br/>
+            <label for="Semester"></label>
+            <input type="checkbox" id="chk1" name="sem1" checked="checked">Semester1<br><Br>
+            <label for="Subjects"></label>
+            <input type="radio" id="rd1" name="sub1" >Subject1<br>
+            <input type="radio" id="rd2" name="sub2" >Subject2<br>
+            <input type="radio" id="rd3" name="sub3" >Subject3<br>
+            <input type="checkbox" id="chk1" name="sem2" >Semester2<br><br>
+            <input type="checkbox" id="chk1" name="sem3" >Semester3<br><br>
+            <select name="Workshop">
+                <option>Workshop-DA</option>
+                <option>Workshop-IoT</option>
+                <option>Workshop-BC</option>
+            </select>
+            <input type="submit" name="Submit" value="submit">
+            <input type="submit" name="mail" value="Mail">
+            <input type="reset" name="Clear" value="clear/reset">
+
+            <label for="file">Downloading progress:</label>
+            <progress id="file" value="30" max="100"> 30% </progress>
+        </form>
+    </body>
+</html>

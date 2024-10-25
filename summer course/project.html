@@ -1,0 +1,155 @@
+<html>
+<head>
+  <title>Cafe Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    .menu-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .menu-item {
+      margin-bottom: 20px;
+    }
+
+    .item-name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .item-description {
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    .item-price {
+      font-weight: bold;
+    }
+
+    #myOrders {
+      margin-top: 40px;
+    }
+
+    #myOrders h2 {
+      margin-bottom: 10px;
+    }
+
+    #myOrders ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    #myOrders li {
+      margin-bottom: 5px;
+    }
+
+    #totalBill {
+      font-weight: bold;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Our Cafe</h1>
+  </header>
+
+  <div class="menu-container">
+    <button onclick="toggleMenu()">Menu</button>
+
+    <div id="menuItems" style="display: none;">
+      <div class="menu-item">
+        <img src="C:\Users\TMC\Desktop\Final year\web dev\project\coffee.jfif" alt="Coffee">
+        <div class="item-name">Coffee</div>
+        <div class="item-description">Our signature blend of freshly brewed coffee.</div>
+        <div class="item-price">Rs. 139</div>
+        <button onclick="addToOrder('Coffee', 159)">Add to Order</button>
+      </div>
+
+      <div class="menu-item">
+        <img src="C:\Users\TMC\Desktop\Final year\web dev\project\crossiant.jfif" alt="Croissant">
+        <div class="item-name">Croissant</div>
+        <div class="item-description">Flaky, buttery croissant made from scratch.</div>
+        <div class="item-price">Rs. 129</div>
+        <button onclick="addToOrder('Croissant', 129)">Add to Order</button>
+      </div>
+
+      <div class="menu-item">
+        <img src="C:\Users\TMC\Desktop\Final year\web dev\project\avacado.jfif" alt="Avocado Toast">
+        <div class="item-name">Avocado Toast</div>
+        <div class="item-description">Toasted bread topped with fresh avocado and spices.</div>
+        <div class="item-price">Rs. 189</div>
+        <button onclick="addToOrder('Avocado Toast', 189)">Add to Order</button>
+      </div>
+      
+      <div class="menu-item">
+        <img src="C:\Users\TMC\Desktop\Final year\web dev\project\sandwich.jfif" alt="Cottage Sandwich">
+        <div class="item-name">Cottage Sandwich</div>
+        <div class="item-description">A delicious sandwich with cheese, and veggies.</div>
+        <div class="item-price">Rs. 129</div>
+        <button onclick="addToOrder('Cottage Sandwich', 129)">Add to Order</button>
+      </div>
+      
+      <div class="menu-item">
+        <img src="C:\Users\TMC\Desktop\Final year\web dev\project\pancake.jfif" alt="Blueberry Pancakes">
+        <div class="item-name">Blueberry Pancakes</div>
+        <div class="item-description">Fluffy pancakes with fresh blueberries and syrup.</div>
+        <div class="item-price">Rs. 149</div>
+        <button onclick="addToOrder('Blueberry Pancakes', 149)">Add to Order</button>
+      </div>
+      
+      <div class="menu-item">
+        <img src="C:\Users\TMC\Desktop\Final year\web dev\project\fries.jfif" alt="French Fries">
+        <div class="item-name">French Fries</div>
+        <div class="item-description">snack made from deep fried potatoes.s</div>
+        <div class="item-price">Rs. 99</div>
+        <button onclick="addToOrder('French Fries', 99)">Add to Order</button>
+      </div>
+    </div>
+
+    <div id="myOrders">
+      <h2>My Orders:</h2>
+      <ul id="orderItems"></ul>
+      <div id="totalBill">Total Bill: Rs. 0.00</div>
+    </div>
+  </div>
+
+  <script>
+    var bill = 0;
+
+    function toggleMenu() {
+      var menuItems = document.getElementById('menuItems');
+      menuItems.style.display = menuItems.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function addToOrder(item, price) {
+      var orderItems = document.getElementById('orderItems');
+      var listItem = document.createElement('li');
+      listItem.textContent = item;
+      orderItems.appendChild(listItem);
+      
+      bill += price;
+      var totalBill = document.getElementById('totalBill');
+      totalBill.textContent = 'Total Bill: Rs. ' + bill.toFixed(2);
+    }
+  </script>
+</body>
+</html>

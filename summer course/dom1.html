@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title> DOM</title>
+        <script>
+            function init(){
+                p1=document.querySelector("p")
+                p1.style.color="blue"
+                list=document.querySelectorAll("li.a")
+                for(i=0;i<list.length;i++)
+                list[i].innerText=list[i].innerText.toUpperCase();
+                //Add new element
+                newsub=document.createElement("li")
+                newsub.innerText="DDCO"
+                ul1=document.querySelector("ul");
+                //ul1.appendChild(newsub)
+                //ul1.insertBefore(newsub,list[0]);
+                //ul1.insertBefore(newsub, ul1.firstChild)
+                //list[0].remove();
+                //ul1.removeChild(list[0])
+                 ul1.replaceChild(newsub, ul1.children[2])
+            }
+        </script>
+    </head>
+    <body onload="init()">
+        <p> Subjects</p>
+        <ul>
+            <li> Data Sructures</li>
+            <li class="a"> Web</li>
+            <li class="a"> Data Science</li>
+        </ul>
+    </body>
+</html>

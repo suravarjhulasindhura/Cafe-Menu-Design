@@ -1,0 +1,58 @@
+/*console.log("Hello World")
+const name ="Sindhura"
+console.log("Hello",name);
+setTimeout(timer, 2000);
+function timer(){
+    console.log("Timer stopped")
+}
+console.log("Timer started")
+const buf1=Buffer.alloc(10,'Hi');
+const buf2=Buffer.alloc(17,'PES University');
+console.log(buf1.toString());
+console.log(buf2.toString());
+const totallength=buf1.length+buf2.length;
+console.log(totallength);
+const buf3=Buffer.concat([buf1,buf2], totallength);
+console.log(buf3.toString())
+var buf4= Buffer.alloc(25)
+buf2.copy(buf4)
+console.log(buf4.toString()); */
+/*var fs= require('fs')
+var data=''
+var rs=fs.createReadStream('data.txt')
+rs.setEncoding('UTF-8');
+rs.on('data', function(chunk){
+    data+=chunk;
+})
+rs.on('end', function(chunk){
+    console.log(data)
+})
+rs.on('err',function(chunk){
+    console.log(err.stack)
+}) */
+
+var fs=require('fs')
+/*
+var data=''
+var rs=fs.createReadStream('data.txt')
+rs.setEncoding('UTF-8');
+rs.on('data',function(chunck){
+    data+=chunck;
+})
+rs.on('end',function(chunck){
+    console.log(data)
+})
+rs.on('err',function(chunck){
+    console.log(err.stack)
+}) */
+var data= "PES University"
+var ws=fs.createWriteStream('data.txt')
+ws.write(data,'UTF-8')
+ws.end();
+ws.on('finish',function(){
+    console.log('write complete')
+})
+ws.on('error', function(err){
+    console.log(error.stack)
+})
+console.log('program ends')

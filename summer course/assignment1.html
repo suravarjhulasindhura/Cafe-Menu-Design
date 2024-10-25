@@ -1,0 +1,127 @@
+<html>
+<head>
+  <title>Student Result Page</title>
+
+  <style>
+    body {
+      background-color:pink;
+    }
+
+    table {
+      background-color: pink;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+
+    caption {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    img {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 100px;
+    }<br><br>
+  </style>
+</head>
+<body>
+  <h1>Student Result Page</h1>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTOkl7IMOSm_rh0tiU9a1OropsvGMp8pPiLA&usqp=CAU" alt="PESU Logo"><br><br>
+  <table>
+    <caption>Student Results</caption>
+    <tr>
+      <th>SRN</th>
+      <th>Subject</th>
+      <th>Marks</th>
+      <th>Result</th>
+    </tr>
+    <tr>
+      <td rowspan="2">EC099</td>
+      <td>C++</td>
+      <td>9o</td>
+      <td rowspan="2">Pass</td>
+    </tr>
+    <tr>
+      <td>Python</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <td rowspan="2">EC025</td>
+      <td>C++</td>
+      <td>32</td>
+      <td rowspan="2">Fail</td>
+    </tr>
+    <tr>
+      <td>Python</td>
+      <td>26</td>
+    </tr>
+  </table>
+<html>
+<head>
+  <title>Re-evaluation Request Form</title>
+  <style>
+    body {
+      background-color: lightblue;
+    }
+
+    form {
+      background-color: white;
+      padding: 20px;
+      width: 300px;
+    }
+
+    input[type="submit"], input[type="reset"] {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Re-evaluation Request Form</h2>
+
+  <form id="requestForm" action="#" onsubmit="submitForm(); return false;">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required><br><br>
+
+    <label for="srn">SRN:</label>
+    <input type="text" id="srn" name="srn" required><br><br>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" required>
+      <option value="">Select</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select><br><br>
+
+    <label for="email">Email ID:</label>
+    <input type="email" id="email" name="email" required pattern=".+@pes\.edu$"><br><br>
+
+    <label for="mobile">Mobile Number:</label>
+    <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}"><br><br>
+
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" name="subject" required><br><br>
+
+    <label for="date">Date of Request:</label>
+    <input type="text" id="date" name="date" required pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}" placeholder="dd-mm-yyyy"><br><br>
+
+    <label for="confirm">Confirm Details:</label>
+    <input type="checkbox" id="confirm" name="confirm" required><br><br>
+
+    <input type="submit" name="Submit" value="submit">
+    <input type="reset" name="Clear" value="clear/reset">
+  </form>
+
+  <script src="assignment1.js"></script>
+</body>
+
+</html>
+

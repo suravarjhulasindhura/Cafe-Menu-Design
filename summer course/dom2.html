@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title> Events</title>
+        <script>
+            /*
+            inline: <p onclick="handle()"> </p>
+            Event property: p.onclick=handle
+            add event Listener: p1.addEventListener("click", handler) */
+            function init(){
+                list=document.querySelectorAll("li")
+                for(let i in list)
+                list[i].onclick=handler;
+              /*  document.querySelector("p").addEventListener("click", function(event){
+                event.target.innerHTML="I was clicked"
+            })*/
+             document.querySelector("p").addEventListener("mousedown", mdown);
+                function mdown(event){
+                event.target.innerHTML="I was clicked"
+            }
+        }
+            function handler(event){
+                console.log(event.target.innerHTML)
+                event.target.style.color="orange"
+            }
+        </script>
+    </head>
+    <body onload="init()">
+        <div>
+            <p onclick="handler(event)"> Subjects</p>
+            <ul>
+                <li> Data structures</li>
+                <li> Web</li>
+                <li> Data Science</li>
+            </ul>
+        </div>
+    </body>
+
+</html>
